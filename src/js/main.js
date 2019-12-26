@@ -2,7 +2,7 @@
   const SpreadOperator = {
     cacheDom() {
       this.heading = document.querySelector('.jump');
-      this.aLetters = Array.from(this.heading.textContent);
+      this.aLetters = this.heading.textContent;
     },
     init() {
       window.document.documentElement.classList.add('js-enabled');
@@ -14,10 +14,8 @@
         this.heading.appendChild(eSpan);
       }
     },
-    removeRemoveElements(node) {
-      while (node.firstChild) {
-        node.removeChild(node.firstChild);
-      }
+    removeRemoveElements() {
+      this.heading.textContent = "";
     }
   };
   SpreadOperator.init();
